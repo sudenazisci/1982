@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollToTop();
   initActiveNavLinks();
   initParallax();
+  initTextReveal();
 });
 
 // ==========================================
@@ -381,3 +382,58 @@ window.handleFormSubmit = function (e) {
 // EXPOSE global functions (for inline HTML calls)
 // ==========================================
 window.showToast = showToast;
+
+// ==========================================
+// TEXT & IMAGE REVEAL ANIMATIONS
+// ==========================================
+function initTextReveal() {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Başlıkları kelime kelime böl
+  const titles = document.querySelectorAll(
+    '.hero-year, .hero-subtitle-text, .section-title, .sec-head h2, .about-text h2, .give-intro h2, .reach-intro h2'
+  );
+  titles.forEach(el => {
+    const words = el.textContent.trim().split(/\s+/);
+    el.setAttribute('aria-label', el.textContent.trim());
+    el.innerHTML = words
+      .map((w, i) => `<span class="w" aria-hidden="true" style="--i:${i}">${w}</span>`)
+      .join(' ');
+    el.classList.add('split');
+  });
+
+  // Metin blokları ve fotoğraflar
+  const blocks = document.querySelectorAll(
+    '.eyebrow, .section-subtitle, .about-lead, .about-facts > div, .mstep, .membership-lead, .membership-note, ' +
+    '.purpose-lead, .purpose-list li, .act-row, .history-box, .give-intro p, .give-card, .reach-intro p, ' +
+    '.call-card, .reach-list > div, .hero-eyebrow, .hero-desc, .hero-cta, .foot-col, .foot-brand, .board-section-title'
+  );
+  blocks.forEach(el => {
+    el.classList.add('rv');
+    const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
+    el.style.setProperty('--d', `${Math.min(siblings.indexOf(el), 6) * 90}ms`);
+  });
+  const figures = document.querySelectorAll(
+    '.about-photos figure, .act-media img, .gallery-grid figure, .history-photo, .foot-ata'
+  );
+  figures.forEach((el, i) => {
+    el.classList.add('img-rv');
+    el.style.setProperty('--d', `${(i % 3) * 120}ms`);
+  });
+
+  const targets = [...titles, ...blocks, ...figures];
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(t => t.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  targets.forEach(t => io.observe(t));
+}
+
