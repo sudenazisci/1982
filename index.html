@@ -25,19 +25,55 @@
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar" id="navbar">
 
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#hero" class="nav-link active" data-section="hero">Ana Sayfa</a></li>
-      <li><a href="#about" class="nav-link" data-section="about">Biz Kimiz</a></li>
-      <li><a href="#purpose" class="nav-link" data-section="purpose">Amacımız</a></li>
-      <li><a href="#management" class="nav-link" data-section="management">Yönetim & Denetim</a></li>
-      <li><a href="#activities" class="nav-link" data-section="activities">Faaliyetlerimiz</a></li>
-      <li><a href="#history" class="nav-link" data-section="history">Tarihçe</a></li>
-      <li><a href="#donation" class="nav-link" data-section="donation">Bağış</a></li>
-      <li><a href="#contact" class="nav-link" data-section="contact">İletişim</a></li>
-    </ul>
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <div class="nav-top">
+
+        <!-- Sol: Dernek logosu -->
+        <div class="nav-side nav-left">
+          <div class="nav-logo">
+            <img src="./src/assets/logo-dernek.png" alt="1982 Mezunu Havacılar Derneği Logosu" />
+          </div>
+        </div>
+
+        <!-- Logo yanında: 1982 yazısı -->
+        <div class="nav-side nav-right nav-brand-text">
+          <span class="nav-year">1982</span>
+          <span class="nav-subtitle">Mezunu Havacılar</span>
+        </div>
+
+        <!-- Orta: Dalgalanan Türk bayrağı -->
+        <div class="nav-center">
+          <img class="nav-flag-center" src="./src/assets/blendertimer-turkey-721.gif" alt="Dalgalanan Türk Bayrağı" />
+        </div>
+
+        <!-- En sağ: Hamburger menü -->
+        <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç" aria-controls="navMenu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+      <!-- Menü bağlantıları -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active" data-section="hero">Ana Sayfa</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">Biz Kimiz</a></li>
+        <li><a href="#purpose" class="nav-link" data-section="purpose">Amacımız</a></li>
+        <li><a href="#management" class="nav-link" data-section="management">Yönetim & Denetim</a></li>
+        <li><a href="#activities" class="nav-link" data-section="activities">Faaliyetlerimiz</a></li>
+        <li><a href="#history" class="nav-link" data-section="history">Tarihçe</a></li>
+        <li><a href="#donation" class="nav-link" data-section="donation">Bağış</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">İletişim</a></li>
+      </ul>
+
+    </div>
   </nav>
+
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">

@@ -5420,99 +5420,637 @@ h4,
   }
 }
 
-/* 1982 ve alt başlık görünümü */
-.nav-brand-text {
-  display: flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #b18a4a;
-  text-align: center;
-  position: relative;
-  z-index: 5;
-  overflow: visible;
-}
+/* ---------- NAVBAR ÜST ALANI ---------- */
 
-.nav-brand-text .nav-year {
-  display: block !important;
-  color: #b18a4a !important;
-  font-family: 'Fraunces', serif;
-  font-size: 29px;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.nav-brand-text .nav-subtitle {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #b18a4a !important;
-  font-family: 'Manrope', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 1.4;
-  white-space: nowrap;
-  text-transform: uppercase;
-}
-
+/* Logo, bayrak ve 1982 yazısının bulunduğu alan */
 .nav-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   width: 100%;
+  height: 64px;
+  min-height: 64px;
+  padding: 4px 20px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+/* Sol logo */
 .nav-left {
-  justify-self: start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
 }
 
+.nav-logo img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border: none;
+  box-shadow: none;
+}
+
+/* Ortadaki dalgalanan Türk bayrağı */
 .nav-center {
-  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
 }
 
+.nav-flag-center {
+  display: block;
+  width: 100px;
+  height: 56px;
+  max-width: none;
+  object-fit: contain;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  animation: none;
+}
+
+/* 1982 yazısı en sağda */
 .nav-right.nav-brand-text {
-  justify-self: end;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
+  justify-self: end;
   text-align: right;
-  padding-right: 20px;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
 .nav-brand-text .nav-year {
-  display: block;
-  font-size: 29px;
-  line-height: 1.1;
-  color: #b18a4a;
+  font-family: 'Fraunces', serif;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1;
 }
 
 .nav-brand-text .nav-subtitle {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: #b18a4a;
+  margin-top: 3px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
   white-space: nowrap;
 }
 
-/* Menü çubuğunu büyüt */
+/* Mobil ekran */
+@media (max-width: 600px) {
+  .nav-top {
+    height: 58px;
+    min-height: 58px;
+    padding: 4px 10px;
+  }
+
+  .nav-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-flag-center {
+    width: 76px;
+    height: 46px;
+  }
+
+  .nav-brand-text .nav-year {
+    font-size: 19px;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-brand-text .nav-subtitle {
+    font-size: 7px;
+    letter-spacing: 0;
+  }
+}
+
+/* ---------- KOMPAKT NAVBAR ---------- */
+
+/* Üst alanın tamamı */
 .navbar {
-  min-height: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-/* Menü yazılarını büyüt */
-.navbar a {
-  font-size: 14px;
-  font-weight: 600;
+.nav-container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-/* Menü ile altındaki görsel arasındaki boşluğu azalt */
-.navbar+section {
-  margin-top: 0;
-  padding-top: 15px;
+.nav-top {
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 3px 16px !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Sol logo: çerçevesiz ve küçük */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+.nav-logo img {
+  display: block;
+  width: 38px !important;
+  height: 38px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  object-fit: contain;
+}
+
+/* Ortadaki bayrak */
+.nav-flag-center {
+  width: 82px !important;
+  height: 46px !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+/* Sağdaki 1982 yazısı */
+.nav-right.nav-brand-text {
+  justify-self: end;
+  align-items: flex-end;
+  text-align: right;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-brand-text .nav-year {
+  font-size: 21px !important;
+  letter-spacing: 0.5px;
+}
+
+.nav-brand-text .nav-subtitle {
+  font-size: 7px !important;
+  letter-spacing: 0.2px;
+  margin-top: 2px;
+}
+
+/* Mobil ekran */
+@media (max-width: 600px) {
+  .nav-top {
+    height: 52px !important;
+    min-height: 52px !important;
+    padding: 3px 9px !important;
+  }
+
+  .nav-logo img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .nav-flag-center {
+    width: 68px !important;
+    height: 40px !important;
+  }
+
+  .nav-brand-text .nav-year {
+    font-size: 18px !important;
+  }
+
+  .nav-brand-text .nav-subtitle {
+    font-size: 6px !important;
+  }
+}
+
+/* Sol logo: daha büyük ve yuvarlak */
+.nav-logo {
+  width: 48px !important;
+  height: 48px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50% !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.nav-logo img {
+  width: 48px !important;
+  height: 48px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+
+  .nav-logo,
+  .nav-logo img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* ---------- MOBİL NAVBAR DÜZENİ ---------- */
+@media (max-width: 600px) {
+  .nav-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 4px 12px !important;
+  }
+
+  /* Sol logo */
+  .nav-side.nav-left {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .nav-logo {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    overflow: hidden;
+  }
+
+  .nav-logo img {
+    width: 38px !important;
+    height: 38px !important;
+    object-fit: cover;
+    border-radius: 50% !important;
+  }
+
+  /* Logo ile 1982 arasındaki dikey çizgi */
+  .nav-side.nav-right.nav-brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    border-left: 1px solid rgba(255, 255, 255, 0.55);
+    padding-left: 8px !important;
+    margin-left: 8px !important;
+    margin-right: auto !important;
+    gap: 2px;
+  }
+
+  .nav-brand-text .nav-year {
+    font-size: 17px !important;
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-brand-text .nav-subtitle {
+    font-size: 6px !important;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+
+  /* Bayrak ortada kalır */
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+
+  .nav-flag-center {
+    width: 62px !important;
+    height: 40px !important;
+    object-fit: contain;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Hamburger menü en sağda */
+  .nav-toggle {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto !important;
+    padding: 8px !important;
+    position: relative;
+    z-index: 10;
+    flex: 0 0 auto;
+  }
+}
+
+/* Mobil navbar: logo, 1982, bayrak ve hamburger aynı satırda */
+@media (max-width: 600px) {
+  .nav-top {
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0;
+    width: 100%;
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 4px 10px !important;
+    box-sizing: border-box;
+  }
+
+  /* Sol logo */
+  .nav-side.nav-left {
+    display: flex !important;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .nav-logo,
+  .nav-logo img {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+  }
+
+  .nav-logo {
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .nav-logo img {
+    display: block;
+    object-fit: cover;
+  }
+
+  /* 1982 yazısı logonun hemen yanında */
+  .nav-side.nav-right.nav-brand-text {
+    display: flex !important;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: center;
+    text-align: left !important;
+    margin: 0 0 0 8px !important;
+    padding: 0 0 0 8px !important;
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    gap: 2px;
+  }
+
+  .nav-brand-text .nav-year {
+    font-size: 17px !important;
+    line-height: 1;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-brand-text .nav-subtitle {
+    font-size: 6px !important;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+  }
+
+  /* Bayrak ekranın ortasında */
+  .nav-center {
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    pointer-events: none;
+  }
+
+  .nav-flag-center {
+    display: block;
+    width: 58px !important;
+    height: 38px !important;
+    object-fit: contain;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  /* Hamburger aynı satırda, en sağda */
+  .nav-toggle {
+    display: flex !important;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 0 0 0 auto !important;
+    padding: 8px !important;
+    position: relative;
+    z-index: 20;
+  }
+
+  /* Menü açıldığında bağlantılar alt satırda açılır */
+  .nav-menu {
+    width: 100%;
+  }
+}
+
+/* ---------- TÜM EKRANLARDA ÜST NAVBAR DÜZENİ ---------- */
+
+.nav-top {
+  position: relative;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100%;
+  min-height: 64px;
+  height: 64px;
+  padding: 5px 20px !important;
+  box-sizing: border-box;
+}
+
+/* Sol logo */
+.nav-side.nav-left {
+  display: flex !important;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.nav-logo,
+.nav-logo img {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+}
+
+.nav-logo {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nav-logo img {
+  display: block;
+  object-fit: cover;
+}
+
+/* 1982, logonun hemen yanında ve dikey çizgiyle ayrılmış */
+.nav-side.nav-right.nav-brand-text {
+  display: flex !important;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: center;
+  text-align: left !important;
+  margin: 0 0 0 10px !important;
+  padding: 0 0 0 10px !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  gap: 2px;
+}
+
+.nav-brand-text .nav-year {
+  font-size: 21px !important;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.nav-brand-text .nav-subtitle {
+  font-size: 8px !important;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+/* Bayrak her ekranda yatay ortada */
+.nav-center {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  pointer-events: none;
+}
+
+.nav-flag-center {
+  display: block;
+  width: 82px !important;
+  height: 48px !important;
+  object-fit: contain;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* Hamburger en sağda */
+.nav-toggle {
+  display: flex !important;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin: 0 0 0 auto !important;
+  padding: 8px !important;
+  position: relative;
+  z-index: 20;
+}
+
+/* Telefon görünümü */
+@media (max-width: 600px) {
+  .nav-top {
+    min-height: 58px;
+    height: 58px;
+    padding: 4px 10px !important;
+  }
+
+  .nav-logo,
+  .nav-logo img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .nav-side.nav-right.nav-brand-text {
+    margin-left: 8px !important;
+    padding-left: 8px !important;
+  }
+
+  .nav-brand-text .nav-year {
+    font-size: 17px !important;
+  }
+
+  .nav-brand-text .nav-subtitle {
+    font-size: 6px !important;
+  }
+
+  .nav-flag-center {
+    width: 58px !important;
+    height: 38px !important;
+  }
+
+  .nav-toggle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Hamburger masaüstünde görünmesin */
+@media (min-width: 601px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+/* Telefonda hamburger görünsün */
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: flex !important;
+  }
+}
+
+/* Navbar ile hero fotoğrafı arasındaki boşluğu azalt */
+.navbar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-container {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hero {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.hero-image-wrapper {
+  margin-top: 0 !important;
 }
