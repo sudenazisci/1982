@@ -5497,3 +5497,22 @@ h4,
   color: #b18a4a;
   white-space: nowrap;
 }
+
+/* Menü çubuğunu büyüt */
+.navbar {
+  min-height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Menü yazılarını büyüt */
+.navbar a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Menü ile altındaki görsel arasındaki boşluğu azalt */
+.navbar+section {
+  margin-top: 0;
+  padding-top: 15px;
+}
