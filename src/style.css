@@ -2716,3 +2716,58 @@ body { color: var(--ink); background: var(--off-white); font-size: 17px; line-he
   .nav-toggle { display: flex; padding: 12px; }
   .nav-toggle span { background: #fff; width: 26px; }
 }
+
+/* ==========================================
+   v9: üç bölgeli navbar, yönetim kartı hizası, faaliyet 06
+   ========================================== */
+:root { --nav-top-h: 84px; --nav-menu-h: 46px; --nav-h: calc(var(--nav-top-h) + var(--nav-menu-h)); }
+html { scroll-padding-top: var(--nav-h); }
+.hero { padding-top: var(--nav-h); }
+
+/* Navbar: sol bayrak + Atatürk | orta bayrak + 1982 | sağ logo */
+.nav-container { height: auto; flex-wrap: wrap; justify-content: center; }
+.nav-top { width: 100%; height: var(--nav-top-h); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.nav-side, .nav-center { display: flex; align-items: center; min-width: 0; }
+.nav-left { justify-content: flex-start; gap: 14px; }
+.nav-right { justify-content: flex-end; }
+.nav-center { justify-content: center; gap: 14px; }
+.nav-flag, .nav-flag-center { width: auto; aspect-ratio: 3 / 2; object-fit: contain; flex: 0 0 auto; margin: 0; padding: 0; border: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.3); }
+.nav-flag { height: 36px; }
+.nav-flag-center { height: 32px; }
+.nav-ata { width: 52px; height: 64px; object-fit: cover; object-position: 50% 8%; filter: grayscale(1) contrast(1.05); border: 2px solid var(--brass-soft); border-radius: 2px; flex: 0 0 auto; }
+.nav-year { font-family: 'Inter', 'Segoe UI', sans-serif; font-size: 2.2rem; font-weight: 800; line-height: 1; letter-spacing: .12em; color: #fff; }
+.nav-logo { width: 68px; height: 68px; flex: 0 0 auto; }
+
+@media (min-width: 901px) {
+  .nav-menu { width: 100%; height: var(--nav-menu-h); justify-content: center; }
+}
+@media (max-width: 900px) {
+  :root { --nav-top-h: 68px; --nav-menu-h: 44px; }
+  .nav-container { padding: 0 14px; }
+  .nav-top { gap: 8px; }
+  .nav-left { gap: 8px; }
+  .nav-flag { height: 26px; }
+  .nav-flag-center { height: 24px; }
+  .nav-ata { width: 40px; height: 50px; }
+  .nav-year { font-size: 1.6rem; }
+  .nav-logo { width: 52px; height: 52px; }
+  .nav-toggle { width: 100%; height: var(--nav-menu-h); align-items: center; justify-content: center; padding: 0; }
+}
+@media (max-width: 380px) {
+  .nav-flag { display: block; height: 22px; }
+  .nav-flag-center { height: 20px; }
+  .nav-ata { width: 34px; height: 44px; }
+  .nav-year { font-size: 1.3rem; letter-spacing: .08em; }
+  .nav-logo { width: 46px; height: 46px; }
+}
+
+/* Yönetim & Denetim: simge ve isimler aynı hizadan başlar */
+.board-panel .board-members { align-items: stretch; }
+.board-member { display: grid; grid-template-columns: 44px minmax(0, 1fr); grid-template-areas: "avatar rank" "avatar name"; column-gap: 14px; row-gap: 2px; align-items: center; min-height: 68px; }
+.board-member .bm-avatar { grid-area: avatar; width: 44px; height: 44px; align-self: center; justify-self: start; }
+.board-member .bm-rank { grid-area: rank; align-self: end; margin: 0; }
+.board-member .bm-name { grid-area: name; align-self: start; line-height: 1.25; }
+
+/* Faaliyet 06: metin 'düzenleyerek' kelimesinden sonra aynı satırdan devam eder */
+.act-row-wide .act-body p { max-width: none; }
+@media (min-width: 901px) { .act-row-wide .act-body p { white-space: nowrap; } }

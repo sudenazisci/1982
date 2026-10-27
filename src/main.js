@@ -200,7 +200,8 @@ function initSmoothScroll() {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        const offset = 80;
+        const nav = document.getElementById('navbar');
+        const offset = (nav ? nav.offsetHeight : 80) + 8;
         const top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top, behavior: 'smooth' });
       }
