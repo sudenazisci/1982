@@ -6054,3 +6054,34 @@ h4,
 .hero-image-wrapper {
   margin-top: 0 !important;
 }
+
+/* Navbar ile ana fotoğraf arasındaki boşluk - tüm ekranlar */
+nav#navbar {
+  position: relative !important;
+  margin-bottom: 2px !important;
+  z-index: 10;
+}
+
+section#hero {
+  position: relative !important;
+  margin-top: 0 !important;
+}
+
+/* Fotoğrafın konumunu ve boyutunu koru */
+section#hero .hero-image-wrapper {
+  top: 0;
+}
+
+/* Mobil görünüm */
+@media (max-width: 600px) {
+  nav#navbar {
+    margin-bottom: 5px !important;
+  }
+}
+
+.hero-content {
+  max-width: 650px;
+  width: 90%;
+  padding: 28px 32px;
+  box-sizing: border-box;
+}
