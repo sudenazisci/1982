@@ -35,7 +35,7 @@
         <!-- Sol: Dernek logosu -->
         <div class="nav-side nav-left">
           <div class="nav-logo">
-            <img src="./src/assets/logo-dernek.png" alt="1982 Mezunu Havacılar Derneği Logosu" />
+            <img src="./src/assets/logo-dernek.jpg" alt="1982 Mezunu Havacılar Derneği Logosu" />
           </div>
         </div>
 
@@ -61,14 +61,12 @@
 
       <!-- Menü bağlantıları -->
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#hero" class="nav-link active" data-section="hero">Ana Sayfa</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">Biz Kimiz</a></li>
-        <li><a href="#purpose" class="nav-link" data-section="purpose">Amacımız</a></li>
-        <li><a href="#management" class="nav-link" data-section="management">Yönetim & Denetim</a></li>
-        <li><a href="#activities" class="nav-link" data-section="activities">Faaliyetlerimiz</a></li>
-        <li><a href="#history" class="nav-link" data-section="history">Tarihçe</a></li>
-        <li><a href="#donation" class="nav-link" data-section="donation">Bağış</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">İletişim</a></li>
+        <li><a href="index.html#hero" class="nav-link active" data-section="hero">Ana Sayfa</a></li>
+        <li><a href="index.html#about" class="nav-link" data-section="about">Biz Kimiz</a></li>
+        <li><a href="departed.html" class="nav-link">Aramızdan Ayrılanlar</a></li>
+        <li><a href="membership.html" class="nav-link">Üyelik</a></li>
+        <li><a href="bylaws.html" class="nav-link">Dernek Tüzüğü</a></li>
+        <li><a href="index.html#contact" class="nav-link" data-section="contact">İletişim</a></li>
       </ul>
 
     </div>
@@ -83,7 +81,7 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <div class="hero-logo"><img src="./src/assets/logo-dernek.png" alt="1982 Mezunu Havacılar Derneği Logosu" /></div>
+      <div class="hero-logo"><img src="./src/assets/logo-dernek.jpg" alt="1982 Mezunu Havacılar Derneği Logosu" /></div>
       <p class="hero-eyebrow">Kuruluş 23.12.2024 · Tescil No: 38-087-085</p>
       <h1 class="hero-title">
         <span class="hero-year">1982 Mezunu Havacılar</span>
@@ -92,8 +90,8 @@
       <p class="hero-desc">1980'li yıllarda Gaziemir'de yolları kesişen, ülkenin dört bir yanında dostluğunu sürdüren ve
         yaşadığı topluma değer katmaya çalışan bir grubuz.</p>
       <div class="hero-cta">
-        <a href="#about" class="btn btn-gold" id="heroAboutBtn">Biz Kimiz</a>
-        <a href="#contact" class="btn btn-outline" id="heroContactBtn">İletişime Geç</a>
+        <a href="index.html#about" class="btn btn-gold" id="heroAboutBtn">Biz Kimiz</a>
+        <a href="membership.html" class="btn btn-outline" id="heroMembershipBtn">Üyelik Başvurusu</a>
       </div>
     </div>
     <div class="hero-scroll-indicator">
@@ -144,28 +142,27 @@
       </div>
     </div>
     <div class="wrap about-wrap">
-
-
-      <div class="membership-section">
-        <h3 class="subsection-title"><i class="fas fa-user-check"></i> Üyelik Şartları</h3>
-        <p class="membership-lead">Yasaların dernek üyeliği için aradığı şartları taşımakla birlikte aşağıdaki
-          gruplardan olanlar, iki üyenin önermesiyle derneğimize kabul edilebilir.</p>
-        <div class="membership-steps">
-          <div class="mstep"><span class="mstep-no">01</span>
-            <h4>Hava Teknik Okulları</h4>
-            <p>1980, 1981 ve 1982 yıllarında Hava Teknik Okullarında eğitim görenler.</p>
-          </div>
-          <div class="mstep"><span class="mstep-no">02</span>
-            <h4>Hava Birlikleri</h4>
-            <p>Aynı dönemde başka okullarda eğitim görüp hava birliklerinde görev yapanlar.</p>
-          </div>
-          <div class="mstep"><span class="mstep-no">03</span>
-            <h4>Eş ve Çocuklar</h4>
-            <p>Üyelerin eş ve çocukları ile üye olmasında yarar görülen kişiler.</p>
+      <!-- Ana Sayfada Üyelik Tanıtım Alanı -->
+      <div class="homepage-promo-grid">
+        <div class="hp-promo-card hp-promo-membership">
+          <div class="hp-promo-icon"><i class="fas fa-user-plus"></i></div>
+          <div class="hp-promo-content">
+            <h3>Derneğimize Üye Olun</h3>
+            <p>Derneğimize katılarak mezunlarımız arasındaki dayanışmanın ve birlikteliğin bir parçası olabilirsiniz. Üyeliğe kabul için iki mevcut üyenin önerisi gereklidir.</p>
+            <a href="membership.html" class="btn btn-gold" id="homepageMembershipBtn">Üyelik Başvurusu</a>
           </div>
         </div>
-        <p class="membership-note"><i class="fas fa-handshake"></i> Üyeliğe kabul için iki mevcut üyenin önermesi
-          gerekir.</p>
+        <div class="hp-promo-card hp-promo-bylaws">
+          <div class="hp-promo-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="hp-promo-content">
+            <h3>Dernek Tüzüğümüz</h3>
+            <p>Sivil Toplumla İlişkiler Müdürlüğü onaylı güncel tüzüğümüze ulaşabilirsiniz.</p>
+            <div class="hp-promo-btns">
+              <a href="bylaws.html" class="btn btn-navy" id="homepageBylawsBtn">Tüzüğü Görüntüle</a>
+              <a href="/belgeler/G%C3%BCncel%20T%C3%BCz%C3%BCk%20Dosyas%C4%B1.pdf" download class="btn btn-outline-dark" id="homepageBylawsDownload">İndir</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -482,11 +479,24 @@
           <a class="call-num" href="tel:+905058251021">0-505-825 10 21</a>
           <a class="call-act" href="tel:+905058251021">Hemen arayın</a>
         </div>
+        <!-- E-posta kartı -->
+        <a class="contact-email-card" href="mailto:bilgi@1982havacilar.org.tr" id="contactEmailCard">
+          <span class="contact-email-icon"><i class="fas fa-envelope"></i></span>
+          <span class="contact-email-info">
+            <span class="contact-email-label">E-posta ile ulaşın</span>
+            <span class="contact-email-addr">bilgi@1982havacilar.org.tr</span>
+          </span>
+          <span class="contact-email-arrow"><i class="fas fa-arrow-right"></i></span>
+        </a>
       </div>
       <dl class="reach-list">
         <div>
           <dt>Telefon</dt>
           <dd><a href="tel:+905058251021">0-505-825 10 21</a></dd>
+        </div>
+        <div>
+          <dt>E-posta</dt>
+          <dd><a href="mailto:bilgi@1982havacilar.org.tr">bilgi@1982havacilar.org.tr</a></dd>
         </div>
         <div>
           <dt>Adres</dt>
@@ -509,7 +519,7 @@
     <div class="wrap foot-grid">
       <div class="foot-brand">
         <div class="foot-id">
-          <img src="./src/assets/logo-dernek.png" alt="1982 Mezunu Havacılar Derneği Logosu" class="foot-logo" />
+          <img src="./src/assets/logo-dernek.jpg" alt="1982 Mezunu Havacılar Derneği Logosu" class="foot-logo" />
           <div><strong>1982 Havacılar Derneği</strong><span>Tescil No: 38-087-085 · Kuruluş: 23.12.2024</span></div>
         </div>
         <p>1982 Mezunu Havacılar Sosyal Yardımlaşma ve Dayanışma Derneği. Havacılık ruhu, kardeşlik bağı.</p>
@@ -518,20 +528,19 @@
       <nav class="foot-col" aria-label="Hızlı erişim">
         <h4>Hızlı Erişim</h4>
         <ul>
-          <li><a href="#hero">Ana Sayfa</a></li>
-          <li><a href="#about">Biz Kimiz</a></li>
-          <li><a href="#purpose">Amacımız</a></li>
-          <li><a href="#management">Yönetim &amp; Denetim</a></li>
-          <li><a href="#activities">Faaliyetlerimiz</a></li>
-          <li><a href="#history">Tarihçe</a></li>
-          <li><a href="#donation">Bağış</a></li>
-          <li><a href="#contact">İletişim</a></li>
+          <li><a href="index.html#hero">Ana Sayfa</a></li>
+          <li><a href="index.html#about">Biz Kimiz</a></li>
+          <li><a href="departed.html">Aramızdan Ayrılanlar</a></li>
+          <li><a href="membership.html">Üyelik</a></li>
+          <li><a href="bylaws.html">Dernek Tüzüğü</a></li>
+          <li><a href="index.html#contact">İletişim</a></li>
         </ul>
       </nav>
       <div class="foot-col">
         <h4>İletişim</h4>
         <p><a href="tel:+905058251021">0-505-825 10 21</a></p>
         <p>Atıf Bey Mh. Lozan Cd. No: 11<br />Gaziemir / İzmir</p>
+        <p><a href="mailto:bilgi@1982havacilar.org.tr">bilgi@1982havacilar.org.tr</a></p>
         <p>IBAN: TR97 0006 4000 0013 4560 4835 26<br /><small>Açıklama: "bağış"</small></p>
       </div>
       <figure class="foot-ata">

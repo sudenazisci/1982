@@ -6085,3 +6085,982 @@ section#hero .hero-image-wrapper {
   padding: 28px 32px;
   box-sizing: border-box;
 }
+
+/* ==========================================
+   PAGE HERO (Alt sayfalar için başlık alanı)
+   ========================================== */
+.page-hero {
+  padding: 140px 0 70px;
+  background: linear-gradient(135deg, var(--off-white) 0%, var(--gray-100) 100%);
+  border-bottom: 2px solid var(--gold-dark);
+  text-align: center;
+}
+
+.page-hero-dark {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-bottom-color: var(--gold-dark);
+}
+
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.page-hero-title.light {
+  color: var(--gold);
+}
+
+.page-hero-desc {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+}
+
+.page-hero-desc.light {
+  color: var(--silver);
+}
+
+.eyebrow.light {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ==========================================
+   HOMEPAGE PROMO CARDS (Ana sayfa üyelik+tüzük)
+   ========================================== */
+.homepage-promo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 48px;
+  margin-bottom: 20px;
+}
+
+.hp-promo-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.hp-promo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+}
+
+.hp-promo-membership::before {
+  background: linear-gradient(90deg, var(--navy), var(--navy-mid));
+}
+
+.hp-promo-bylaws::before {
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+}
+
+.hp-promo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-dark);
+}
+
+.hp-promo-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.hp-promo-bylaws .hp-promo-icon {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--navy);
+}
+
+.hp-promo-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.hp-promo-content p {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.hp-promo-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================
+   CONTACT EMAIL CARD (Bize Ulaşın)
+   ========================================== */
+.contact-email-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  background: var(--white);
+  border: 2px solid var(--gold-dark);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-email-card:hover {
+  background: var(--navy);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+.contact-email-card:hover .contact-email-label,
+.contact-email-card:hover .contact-email-addr,
+.contact-email-card:hover .contact-email-arrow {
+  color: var(--gold);
+}
+
+.contact-email-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.contact-email-card:hover .contact-email-icon {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.contact-email-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.contact-email-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+  transition: var(--transition);
+}
+
+.contact-email-addr {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: var(--transition);
+}
+
+.contact-email-arrow {
+  color: var(--gold-dark);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+/* ==========================================
+   ÜYELİK SAYFASI STİLLERİ
+   ========================================== */
+
+/* Üyelik Koşulları Kutusu */
+.membership-conditions-box {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  box-shadow: var(--shadow-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.mc-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--gold-dark);
+}
+
+.mc-header-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.mc-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.mc-subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-500);
+}
+
+.mc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--gray-100);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--gold-dark);
+}
+
+.mc-item-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.mc-item p {
+  font-size: 0.92rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 6px;
+}
+
+/* Üyelik Form Layout */
+.membership-form-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.membership-form-panel {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: blur(4px);
+}
+
+.membership-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mi-block {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  backdrop-filter: blur(4px);
+}
+
+.mi-contact-block {
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.mi-block-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.mi-block-desc {
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.mi-pdf-btns {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.mi-steps {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mi-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.5;
+}
+
+.mi-step-no {
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.mi-email-link {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 10px;
+  word-break: break-all;
+  transition: var(--transition);
+}
+
+.mi-email-link:hover {
+  color: var(--gold-light);
+}
+
+.mi-phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--silver);
+  transition: var(--transition);
+}
+
+.mi-phone-link:hover {
+  color: var(--gold);
+}
+
+/* Form zorunlu alan işaretçisi */
+.required {
+  color: #e05050;
+  margin-left: 2px;
+}
+
+.optional {
+  color: var(--silver);
+  font-weight: 400;
+  font-size: 0.78rem;
+  margin-left: 4px;
+}
+
+/* Form hata metinleri */
+.field-error {
+  font-size: 0.78rem;
+  color: #e05050;
+  display: none;
+  margin-top: 4px;
+}
+
+/* Form başarı / hata mesajları */
+.form-success {
+  display: none;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(45, 122, 74, 0.15);
+  border: 1px solid rgba(45, 122, 74, 0.5);
+  border-radius: var(--radius-sm);
+  color: #7bcf9b;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.form-error-msg {
+  display: none;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(224, 80, 80, 0.1);
+  border: 1px solid rgba(224, 80, 80, 0.4);
+  border-radius: var(--radius-sm);
+  color: #e08888;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+}
+
+.form-success i,
+.form-error-msg i {
+  font-size: 1.1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Islak imza uyarı kutusu */
+.wet-signature-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 18px 20px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.6;
+}
+
+.wet-signature-notice i {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.wet-signature-notice strong {
+  color: var(--gold-light);
+}
+
+/* Dark section'daki form input stilleri */
+.section-dark .form-group label {
+  color: var(--silver);
+}
+
+.section-dark .form-group input,
+.section-dark .form-group select,
+.section-dark .form-group textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(201, 168, 76, 0.25);
+  color: var(--white);
+}
+
+.section-dark .form-group input::placeholder,
+.section-dark .form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.section-dark .form-group input:focus,
+.section-dark .form-group select:focus,
+.section-dark .form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--gold-dark);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+}
+
+.section-dark .form-group select option {
+  background: var(--navy-mid);
+  color: var(--white);
+}
+
+/* ==========================================
+   DERNEK TÜZÜĞÜ SAYFASI
+   ========================================== */
+.bylaws-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 36px;
+}
+
+.bylaws-info-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+
+.bylaws-info-text h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.bylaws-info-text p {
+  font-size: 0.92rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.bylaws-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bylaws-pdf-wrapper {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+.bylaws-pdf-header {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--gold-dark);
+}
+
+.bylaws-pdf-frame {
+  width: 100%;
+  height: 75vh;
+  min-height: 500px;
+  border: none;
+  display: block;
+}
+
+.bylaws-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.bylaws-footer-note i {
+  color: var(--gold-dark);
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.bylaws-footer-note a {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.bylaws-footer-note a:hover {
+  color: var(--navy);
+}
+
+/* ==========================================
+   ARAMIZDAN AYRILANLAR SAYFASI
+   ========================================== */
+.departed-section {
+  min-height: 60vh;
+}
+
+.departed-search-bar {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.departed-table-wrapper {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.departed-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.departed-table thead tr {
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  border-bottom: 2px solid var(--gold-dark);
+}
+
+.departed-table thead th {
+  padding: 16px 20px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: left;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.departed-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
+}
+
+.departed-table tbody tr:hover {
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.departed-table tbody td {
+  padding: 14px 20px;
+  font-size: 0.9rem;
+  color: var(--silver);
+  vertical-align: middle;
+}
+
+.departed-table tbody td:first-child {
+  color: var(--gold-dark);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.departed-table tbody td:nth-child(3) {
+  font-weight: 600;
+  color: var(--white);
+}
+
+/* Boş durum */
+.departed-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 32px;
+  gap: 16px;
+}
+
+.departed-empty-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.departed-empty h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.departed-empty p {
+  font-size: 0.9rem;
+  color: var(--silver);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.departed-admin-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.6;
+}
+
+.departed-admin-note i {
+  color: var(--gold);
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.departed-admin-note a {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE – Yeni sayfalar
+   ========================================== */
+@media (max-width: 900px) {
+  .homepage-promo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .membership-form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bylaws-info-card {
+    flex-direction: column;
+    padding: 28px 24px;
+  }
+
+  .membership-conditions-box {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hp-promo-card {
+    flex-direction: column;
+    padding: 24px 20px;
+  }
+
+  .departed-search-bar {
+    flex-direction: column;
+  }
+
+  .departed-search-bar .form-group {
+    flex: 1 !important;
+    width: 100%;
+  }
+
+  .departed-table thead th,
+  .departed-table tbody td {
+    padding: 12px 12px;
+    font-size: 0.82rem;
+  }
+
+  .bylaws-pdf-frame {
+    height: 55vh;
+  }
+
+  .mc-header {
+    flex-direction: column;
+  }
+
+  .membership-form-panel {
+    padding: 24px 20px;
+  }
+}
+
+/* Üyelik bilgi alanı */
+.membership-info-section {
+  background: #FBF9F5;
+}
+
+.membership-info-centered {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.membership-info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.membership-info-content h2 {
+  margin: 0;
+}
+
+.membership-info-content>p {
+  max-width: 650px;
+  line-height: 1.8;
+}
+
+.membership-info-content .wet-signature-notice {
+  width: 100%;
+  text-align: left;
+}
+
+.membership-info-content .btn {
+  margin: 8px auto;
+}
+
+.membership-email {
+  width: 100%;
+  padding-top: 24px;
+  border-top: 1px solid rgba(26, 25, 24, 0.15);
+}
+
+.membership-email h3 {
+  margin-bottom: 12px;
+}
+
+.membership-email p {
+  line-height: 1.7;
+}
+
+.membership-email a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #A34828;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.membership-email a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .membership-info-centered {
+    padding: 0 12px;
+  }
+
+  .membership-info-content .btn {
+    text-align: center;
+  }
+}
+
+.membership-info-content .wet-signature-notice {
+  color: #1A1918;
+  background: #F4F0E8;
+  border: 1px solid rgba(163, 72, 40, 0.25);
+}
+
+.membership-info-content .wet-signature-notice strong {
+  color: #A34828;
+}
+
+.membership-info-content .wet-signature-notice i {
+  color: #A34828;
+}
+
+/* Aramızdan Ayrılanlar - Bilgilendirme Alanı */
+.departed-section {
+  padding: 75px 0;
+}
+
+.departed-info-content {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.departed-info-icon {
+  width: 66px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(163, 72, 40, 0.5);
+  border-radius: 50%;
+  color: #C17A54;
+  font-size: 25px;
+}
+
+.departed-info-label {
+  color: #C17A54;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.departed-info-content h2 {
+  color: #FBF9F5;
+  margin: 0;
+}
+
+.departed-info-content p {
+  max-width: 650px;
+  color: #D5CEC4;
+  line-height: 1.9;
+  margin: 0;
+}
+
+.departed-info-content .btn {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .departed-section {
+    padding: 55px 0;
+  }
+
+  .departed-info-content {
+    padding: 0 12px;
+  }
+
+  .departed-info-content p {
+    font-size: 14px;
+  }
+}
