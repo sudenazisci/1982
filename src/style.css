@@ -6090,7 +6090,7 @@ section#hero .hero-image-wrapper {
    PAGE HERO (Alt sayfalar için başlık alanı)
    ========================================== */
 .page-hero {
-  padding: 140px 0 70px;
+  padding: 90px 0 60px;
   background: linear-gradient(135deg, var(--off-white) 0%, var(--gray-100) 100%);
   border-bottom: 2px solid var(--gold-dark);
   text-align: center;
@@ -7032,5 +7032,26 @@ section#hero .hero-image-wrapper {
 
   .departed-info-content p {
     font-size: 14px;
+  }
+}
+
+/* Dernek Tüzüğü - üst hero boşluğunu kaldır */
+body .page-hero {
+  padding-top: 20px !important;
+  margin-top: 0 !important;
+}
+
+.page-hero .container {
+  padding-top: 0 !important;
+}
+
+.page-hero .eyebrow {
+  margin-top: 0 !important;
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  body .page-hero {
+    padding-top: 15px !important;
   }
 }
