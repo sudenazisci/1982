@@ -193,18 +193,35 @@ function animateCounter(el) {
 // SMOOTH SCROLL
 // ==========================================
 function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
+  const isCurrentPage = (urlPath) => {
+    if (!urlPath) return true;
+    const clean = urlPath.replace(/^\.\//, '').replace(/^\//, '');
+    const current = window.location.pathname.replace(/^\.\//, '').replace(/^\//, '');
+    if (clean === current) return true;
+    if ((current === '' || current.endsWith('index.html')) && (clean === '' || clean.endsWith('index.html'))) return true;
+    return false;
+  };
 
-      const target = document.querySelector(targetId);
-      if (target) {
-        e.preventDefault();
-        const nav = document.getElementById('navbar');
-        const offset = (nav ? nav.offsetHeight : 80) + 8;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+  document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const [path, hash] = href.split('#');
+      if (!hash) return;
+
+      if (isCurrentPage(path)) {
+        const target = document.getElementById(hash);
+        if (target) {
+          e.preventDefault();
+          const nav = document.getElementById('navbar');
+          const offset = (nav ? nav.offsetHeight : 80) + 8;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, '', `#${hash}`);
+          }
+        }
       }
     });
   });
