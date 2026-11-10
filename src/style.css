@@ -5182,6 +5182,16 @@ h4,
   object-position: 50% 62%;
 }
 
+.act-media img.act-logo,
+.act-row.has-media .act-media:not(.pair) img.act-logo {
+  object-fit: contain;
+  object-position: center;
+  background-color: #ffffff;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(20, 35, 63, 0.08);
+}
+
 .history-box {
   grid-template-columns: 190px 1fr;
   gap: 40px;
