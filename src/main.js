@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNavLinks();
   initParallax();
   initTextReveal();
+  initImageLightbox();
 });
 
 // ==========================================
@@ -431,7 +432,7 @@ function initTextReveal() {
     el.style.setProperty('--d', `${Math.min(siblings.indexOf(el), 6) * 90}ms`);
   });
   const figures = document.querySelectorAll(
-    '.about-photos figure, .act-media img, .gallery-grid figure, .history-photo, .foot-ata'
+    '.about-photos figure, .act-media img, .gallery-grid figure, .history-photo, .foot-ata, .act-photo-item'
   );
   figures.forEach((el, i) => {
     el.classList.add('img-rv');
@@ -452,5 +453,67 @@ function initTextReveal() {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   targets.forEach(t => io.observe(t));
+}
+
+// ==========================================
+// IMAGE LIGHTBOX MODAL
+// ==========================================
+function initImageLightbox() {
+  const triggers = document.querySelectorAll('.lightbox-trigger');
+  if (!triggers.length) return;
+
+  let lightbox = document.getElementById('imageLightbox');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.id = 'imageLightbox';
+    lightbox.className = 'image-lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.innerHTML = `
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Kapat">
+          <i class="fas fa-times"></i>
+        </button>
+        <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const closeBtn = document.getElementById('lightboxClose');
+
+  function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || 'Büyütülmüş Görsel';
+    lightboxCaption.textContent = caption || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  triggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-full') || trigger.querySelector('img')?.src;
+      const caption = trigger.getAttribute('data-caption') || trigger.querySelector('img')?.alt;
+      if (src) openLightbox(src, caption);
+    });
+  });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
 }
 
