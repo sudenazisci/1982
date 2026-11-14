@@ -832,6 +832,291 @@ button {
 }
 
 /* ==========================================
+   INSTITUTIONAL IDENTITY SECTION
+   ========================================== */
+.inst-section {
+  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
+}
+
+.inst-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Info grid — top row */
+.inst-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.inst-info-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: var(--radius-md);
+  padding: 22px 20px;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.inst-info-card:hover {
+  background: rgba(201, 168, 76, 0.10);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.inst-info-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.inst-info-label i {
+  font-size: 0.8rem;
+}
+
+.inst-info-value {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+/* Registration numbers grid */
+.inst-reg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.inst-reg-card {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.inst-reg-card:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+}
+
+.inst-reg-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.inst-reg-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+/* Mission statement */
+.inst-mission {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  margin-bottom: 36px;
+  backdrop-filter: blur(4px);
+  position: relative;
+  overflow: hidden;
+}
+
+.inst-mission::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--gold-dark), var(--gold), var(--gold-dark));
+}
+
+.inst-mission-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.inst-mission-quote {
+  font-family: var(--font-accent);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.9;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(201, 168, 76, 0.4);
+}
+
+.inst-mission-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+/* Programs grid */
+.inst-programs-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.inst-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.inst-program-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  transition: var(--transition);
+}
+
+.inst-program-card:hover {
+  background: rgba(201, 168, 76, 0.10);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.inst-program-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-size: 1rem;
+  box-shadow: var(--shadow-gold);
+}
+
+.inst-program-card h4 {
+  font-size: 0.9rem;
+  color: var(--white);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.inst-program-card p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Domain ownership */
+.inst-domain {
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.inst-domain-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  font-size: 0.95rem;
+}
+
+.inst-domain p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.inst-domain strong {
+  color: var(--gold-light);
+}
+
+/* Document buttons */
+.inst-docs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .inst-info-grid {
+    grid-template-columns: 1fr;
+  }
+  .inst-reg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .inst-programs-grid {
+    grid-template-columns: 1fr;
+  }
+  .inst-mission {
+    padding: 24px 20px;
+  }
+  .inst-domain {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .inst-docs {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ==========================================
    PURPOSE SECTION
    ========================================== */
 .purpose-hero-text {
