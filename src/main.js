@@ -501,8 +501,10 @@ function initImageLightbox() {
 
   triggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const src = trigger.getAttribute('data-full') || trigger.querySelector('img')?.src;
-      const caption = trigger.getAttribute('data-caption') || trigger.querySelector('img')?.alt;
+      const img = trigger.querySelector('img');
+      // Canlı sitede (production) Vite tarafından hash'lenmiş çalışan gerçek resim URL'sini al
+      const src = img?.currentSrc || img?.src || trigger.getAttribute('data-full');
+      const caption = trigger.getAttribute('data-caption') || img?.alt || trigger.querySelector('figcaption')?.textContent?.trim();
       if (src) openLightbox(src, caption);
     });
   });
