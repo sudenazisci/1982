@@ -70,28 +70,147 @@
     </div>
   </section>
 
-  <!-- ===================== ANMA BÖLÜMÜ ===================== -->
-  <section class="section section-dark departed-section">
+  <!-- ===================== ŞEHİTLERİMİZ ===================== -->
+  <section class="section section-dark martyr-memorial-section" id="sehitlerimiz">
     <div class="container">
-      <div class="departed-info-content">
-        <span class="departed-info-label">SAYGI VE MİNNETLE</span>
 
-        <h2>Şehitlerimiz ve Gazilerimiz</h2>
+      <div class="memorial-panel">
+        <div class="memorial-panel-top">
+          <div class="memorial-flag-mark">
+            <img src="./src/assets/turk-bayragi.svg" alt="Türk Bayrağı" class="memorial-flag-img" />
+          </div>
+          <div class="memorial-header-text">
+            <span class="memorial-eyebrow">AZİZ ŞEHİDİMİZİN ANISINA</span>
+            <h2 class="memorial-name">Hüseyin KUTLU</h2>
+            <div class="memorial-rank">Hv.Sıh.Müht.Asb.Bçvş.</div>
+          </div>
+        </div>
 
-        <p>
-          Vatanımız uğruna fedakârlık gösteren şehitlerimizi ve
-          gazilerimizi saygı, rahmet ve minnetle anıyoruz.
-          Değerli mezunlarımızın hatıralarına ve kendileri hakkındaki
-          bilgilere derneğimizin resmi internet sitesi üzerinden
-          ulaşabilirsiniz.
-        </p>
+        <div class="memorial-divider"></div>
 
-        <a href="https://www.1982lilerdernegi.com.tr/Sehitlerimizgazilerimiz.html" target="_blank"
-          rel="noopener noreferrer" class="btn btn-gold">
-          Şehitlerimizi ve Gazilerimizi Görüntüle
-          <i class="fas fa-arrow-up-right-from-square"></i>
-        </a>
+        <div class="memorial-grid">
+          <div class="memorial-meta-col">
+            <dl class="memorial-details-list">
+              <div>
+                <dt>Sicil Numarası</dt>
+                <dd>1982-L-16</dd>
+              </div>
+              <div>
+                <dt>Şehadet Tarihi</dt>
+                <dd>22 Eylül 1999</dd>
+              </div>
+              <div>
+                <dt>Görev Yeri</dt>
+                <dd>Kosova (KFOR Barış Gücü)</dd>
+              </div>
+              <div>
+                <dt>Ebedi İstirahatgâh</dt>
+                <dd>Eskişehir</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="memorial-text-col">
+            <p class="memorial-statement">
+              1999 yılında Kosova’da görev esnasında şehadet mertebesine erişen 1982 devremiz
+              <strong>Hv.Sıh.Müht.Asb.Bçvş. Hüseyin KUTLU</strong>’yu sonsuz saygı, rahmet ve minnetle anıyoruz.
+              Aziz vatanımız ve görev uğruna verdiği fedakârlık hafızamızda daima yaşayacaktır.
+            </p>
+            <div class="memorial-action">
+              <a href="https://www.aa.com.tr/tr/dunya/kosovada-1999da-sehit-dusen-turk-askeri-anildi/2692467"
+                target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+                <i class="fas fa-arrow-up-right-from-square"></i>
+                Kosova Şehitleri Anma Haberi (Anadolu Ajansı)
+              </a>
+              <a href="https://jfcnaples.nato.int/kfor/media-center/archive/news/2026/kfor-commemorates-senior-master-sergeant-huseyin-kutlu"
+                target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+                <i class="fas fa-globe"></i>
+                NATO KFOR Resmi Anma Haberi (JFC Naples)
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== VEFAT EDENLER ===================== -->
+  <section class="section dep-list-section" id="vefat-edenler">
+    <div class="container">
+
+      <div class="dep-section-label">
+        <span class="dep-label-text"><i class="fas fa-list"></i> VEFAT EDENLER</span>
+      </div>
+      <h2 class="section-title" style="text-align:left; margin-bottom:0.5rem;">Vefat Eden Mensuplarımız</h2>
+      <p class="section-subtitle" style="text-align:left; margin-bottom:2rem;">
+        Aramızdan ayrılan 1982 mezunu havacı mensuplarımızı saygı ve rahmetle anıyoruz.
+      </p>
+
+      <!-- Arama ve Filtre -->
+      <div class="dep-controls">
+        <div class="dep-search-wrap">
+          <i class="fas fa-search dep-search-icon"></i>
+          <input type="text" id="depSearch" class="dep-search-input"
+            placeholder="İsim, soyisim veya sicil numarasıyla ara..." />
+          <button class="dep-search-clear" id="depSearchClear" title="Aramayı temizle" style="display:none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="dep-filter-wrap">
+          <select id="depYearFilter" class="dep-year-select">
+            <option value="">Tüm Yıllar</option>
+          </select>
+          <button class="dep-sort-btn" id="depSortBtn" data-dir="desc" title="Vefat tarihine göre sırala">
+            <i class="fas fa-sort-amount-down"></i> <span>Tarihe Göre</span>
+          </button>
+        </div>
+        <div class="dep-count-info">
+          <span id="depCountInfo">81 kayıt gösteriliyor</span>
+        </div>
+      </div>
+
+      <!-- Tablo -->
+      <div class="dep-table-wrap">
+        <table class="dep-table" id="depTable">
+          <thead>
+            <tr>
+              <th class="dep-th dep-th-no">No</th>
+              <th class="dep-th">Sınıf / Rütbe</th>
+              <th class="dep-th">Adı</th>
+              <th class="dep-th">Soyadı</th>
+              <th class="dep-th">Sicil No</th>
+              <th class="dep-th">Ayrıldığı Tarih</th>
+              <th class="dep-th">Vefat Tarihi</th>
+              <th class="dep-th">Defin Yeri</th>
+              <th class="dep-th">Not</th>
+            </tr>
+          </thead>
+          <tbody id="depTableBody">
+            <!-- JavaScript ile doldurulacak -->
+          </tbody>
+        </table>
+        <div class="dep-no-result" id="depNoResult" style="display:none;">
+          <i class="fas fa-search"></i>
+          <p>Aramanızla eşleşen kayıt bulunamadı.</p>
+        </div>
+      </div>
+
+      <!-- Vefat Bildirimi Alanı -->
+      <div class="dep-notify-box">
+        <div class="dep-notify-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="dep-notify-text">
+          <h4>Vefat Bildirimi</h4>
+          <p>
+            Listede yer almayan vefat bilgileri, eksik veya güncellenmesi gereken kayıtlar için derneğimizle iletişime geçebilirsiniz.
+            Bildirimlerinizi aşağıdaki e-posta adresine iletebilirsiniz.
+          </p>
+          <a href="mailto:bilgi@1982havacilar.org.tr" class="dep-notify-email">
+            <i class="fas fa-envelope"></i> bilgi@1982havacilar.org.tr
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -108,11 +227,11 @@
         </div>
         <p>Havacılık ruhu, kardeşlik bağı ve toplumsal sorumlulukla kurulan derneğimize hoş geldiniz.</p>
         <p class="foot-values">Vatan · Kardeşlik · Laiklik · Cumhuriyet · Havacılık · Eğitim</p>
-        <!-- Kurumsal Künye -->
         <div class="foot-kunye">
           <span class="foot-kunye-title"><i class="fas fa-id-card"></i> Kurumsal Künye</span>
           <dl class="foot-kunye-list">
             <div><dt>DERBİS Kütük No</dt><dd>35-087-085</dd></div>
+            <div><dt>Tescil No</dt><dd>38-087-085</dd></div>
             <div><dt>Vergi No</dt><dd>0012725583</dd></div>
             <div><dt>Mersis No</dt><dd>0001272558300001</dd></div>
           </dl>
@@ -138,8 +257,7 @@
         <p>IBAN: TR97 0006 4000 0013 4560 4835 26<br /><small>Açıklama: "bağış"</small></p>
       </div>
       <figure class="foot-ata">
-        <div class="foot-frame"><img src="./src/assets/ataturk.jpg" alt="Mustafa Kemal Atatürk" loading="lazy" />
-        </div>
+        <div class="foot-frame"><img src="./src/assets/ataturk.jpg" alt="Mustafa Kemal Atatürk" loading="lazy" /></div>
         <figcaption>
           <img class="foot-flag" src="./src/assets/turk-bayragi.svg" alt="Türk Bayrağı" width="48" height="32"
             loading="lazy" />
@@ -162,7 +280,215 @@
 
   <script type="module" src="/src/main.js"></script>
 
-  <script type="module" src="/src/main.js"></script>
+  <script>
+    // ==========================================
+    // VEFAT EDENLER VERİ YAPISI
+    // Yeni kayıt eklemek için bu diziye satır ekleyin.
+    // ==========================================
+    const departed = [
+      { no: 1,  rank: "Hv.Ulş.Asb.Kd.Bçvş",        name: "Akif",           surname: "BAYRAK",          sicil: "1982-L-57",  left: "03.03.2005", died: "04.04.2026", burial: "-",                                                sehit: false, note: "-" },
+      { no: 2,  rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "İdris",          surname: "UÇAR",            sicil: "1982-L-79",  left: "18.02.2008", died: "12.03.2026", burial: "-",                                                sehit: false, note: "-" },
+      { no: 3,  rank: "Hv.Sih.Müht.Asb.Kd.Bçvş",   name: "Mehmet",         surname: "BOZ",             sicil: "1982-L-44",  left: "16.03.2005", died: "24.01.2026", burial: "Karaburun Saip Mezarlığı KARABURUN-İZMİR",          sehit: false, note: "-" },
+      { no: 4,  rank: "Hv.İkm.Asb.Kd.Bçvş.",       name: "Mehmet Ziya",    surname: "ŞEN",             sicil: "1982-L-16",  left: "20.02.2006", died: "28.04.2025", burial: "-",                                                sehit: false, note: "-" },
+      { no: 5,  rank: "Hv.İsth.Asb.Kd.Bçvş.",      name: "Uğur",           surname: "GÜLHAN",          sicil: "1982-L-11",  left: "22.03.2004", died: "03.10.2024", burial: "-",                                                sehit: false, note: "-" },
+      { no: 6,  rank: "Hv.İkm.Asb.Kd.Bçvş.",       name: "Özan",           surname: "ÖNGEN",           sicil: "1982-L-15",  left: "22.02.2006", died: "16.02.2024", burial: "Kuşçular Mezarlığı Ada3 URLA-İZMİR",               sehit: false, note: "-" },
+      { no: 7,  rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Erdal",          surname: "AYDIN",           sicil: "1982-L-30",  left: "02.04.2004", died: "24.07.2023", burial: "-",                                                sehit: false, note: "-" },
+      { no: 8,  rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Ali",            surname: "SAVAŞ",           sicil: "1982-L-106", left: "17.04.2006", died: "15.04.2023", burial: "-",                                                sehit: false, note: "-" },
+      { no: 9,  rank: "Hv.ls.Asb.Kd.Bçvş",         name: "Ünsal",          surname: "BOZDAĞ",          sicil: "1982-L-60",  left: "05.03.2003", died: "05.03.2023", burial: "-",                                                sehit: false, note: "-" },
+      { no: 10, rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Ali Rıza",       surname: "YALÇIN",          sicil: "1982-L-1",   left: "06.02.2004", died: "05.09.2022", burial: "-",                                                sehit: false, note: "-" },
+      { no: 11, rank: "Hv.Ulş.Kd.Bçvş.",           name: "Ahmet",          surname: "KÜÇÜKSÜMBÜL",     sicil: "1982-L-59",  left: "01.09.2018", died: "17.03.2022", burial: "-",                                                sehit: false, note: "-" },
+      { no: 12, rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Mehmet Ali",     surname: "ÇAKAL",           sicil: "1982-L-48",  left: "03.02.2006", died: "25.01.2022", burial: "-",                                                sehit: false, note: "-" },
+      { no: 13, rank: "Hv.İs.Asb.Kd.Çvş.",         name: "Vahit",          surname: "ALTUĞ",           sicil: "1982-L-110", left: "16.02.1988", died: "04.09.2021", burial: "-",                                                sehit: false, note: "-" },
+      { no: 14, rank: "Hv.İkm.Asb.Kd.Bçvş.",       name: "Cengiz",         surname: "DEMİR",           sicil: "1982-L-34",  left: "16.02.2004", died: "02.08.2021", burial: "-",                                                sehit: false, note: "-" },
+      { no: 15, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Seydi Ahmet",    surname: "ÇÖYGÜN",          sicil: "1982-L-128", left: "27.01.2003", died: "13.07.2021", burial: "-",                                                sehit: false, note: "-" },
+      { no: 16, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "Necdet",         surname: "KORKUT",          sicil: "1982-L-8",   left: "16.02.2004", died: "24.05.2021", burial: "-",                                                sehit: false, note: "-" },
+      { no: 17, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "Adnan",          surname: "SEYRAN",          sicil: "1982-L-33",  left: "16.04.2008", died: "04.11.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 18, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Zafer",          surname: "GÜNGÖREN",        sicil: "1982-L-122", left: "23.05.2007", died: "27.10.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 19, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Halil",          surname: "YALÇIN",          sicil: "1982-L-84",  left: "01.02.2005", died: "06.09.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 20, rank: "Hv.is.Asb.Kd.Bçvş.",        name: "ibrahim",        surname: "ARICILAR",        sicil: "1982-L-25",  left: "04.02.2003", died: "04.09.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 21, rank: "Hv.Svn.Asb.Kd.Bçvş.",       name: "Fahret",         surname: "ORAK",            sicil: "1982-L-27",  left: "17.02.2004", died: "31.08.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 22, rank: "l Hv.Lv.Asb.Kd.Bçvş.",      name: "Faruk",          surname: "ERİŞ",            sicil: "1982-L-46",  left: "18.05.2001", died: "20.07.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 23, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Halit",          surname: "INCE",            sicil: "1982-L-46",  left: "19.03.2002", died: "07.06.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 24, rank: "Hv.lkm.Asb.Kd.Bçvş.",       name: "Resul Yavuz",    surname: "KARADAĞ",         sicil: "1982-L-82",  left: "16.03.2007", died: "31.03.2020", burial: "-",                                                sehit: false, note: "-" },
+      { no: 25, rank: "Hv.Per.Asb.Kd.Bçvş.",       name: "irfan",          surname: "AKDENİZ",         sicil: "1982-L-47",  left: "24.04.2007", died: "04.07.2019", burial: "-",                                                sehit: false, note: "-" },
+      { no: 26, rank: "Hv.İs.Asb.Kd.Bçvş.",        name: "Aletdin",        surname: "ÜZÜMCÜ",          sicil: "1982-L-94",  left: "18.04.2007", died: "14.12.2018", burial: "-",                                                sehit: false, note: "-" },
+      { no: 27, rank: "Hv.Per.Asb.Kd.Bçvş.",       name: "Tufan",          surname: "ARIRT",           sicil: "1982-L-64",  left: "16.09.2002", died: "09.09.2018", burial: "-",                                                sehit: false, note: "-" },
+      { no: 28, rank: "Hv.Lv.Asb.Kd.Bçvş.",        name: "Rifat",          surname: "KARABULUT",       sicil: "1982-L-3",   left: "28.04.2011", died: "09.08.2018", burial: "-",                                                sehit: false, note: "-" },
+      { no: 29, rank: "Hv.Per.Asb.Kd.Bçvş.",       name: "Nurettin",       surname: "AŞICI",           sicil: "1982-L-71",  left: "15.10.2008", died: "20.04.2017", burial: "-",                                                sehit: false, note: "-" },
+      { no: 30, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Aziz",           surname: "BAT",             sicil: "1982-L-179", left: "28.01.2003", died: "11.02.2017", burial: "-",                                                sehit: false, note: "-" },
+      { no: 31, rank: "Hv.Per.Asb.Kd.Bçvş.",       name: "Yaşar",          surname: "KABAKCIOĞLU",     sicil: "1982-L-35",  left: "06.03.2003", died: "24.12.2016", burial: "-",                                                sehit: false, note: "-" },
+      { no: 32, rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Tekin",          surname: "YAKUT",           sicil: "1982-L-62",  left: "09.02.2006", died: "17.07.2016", burial: "-",                                                sehit: false, note: "-" },
+      { no: 33, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Mehmet",         surname: "KESKİN",          sicil: "1982-L-27",  left: "30.01.2003", died: "13.01.2016", burial: "Bozdağ Mezarlığı ÖDEMİŞ-İZMİR",                   sehit: false, note: "-" },
+      { no: 34, rank: "Hv.P.Asb.Çvş.",              name: "Oktay",          surname: "YÜCEKAN",         sicil: "1982-L-50",  left: "17.06.1983", died: "07.12.2015", burial: "-",                                                sehit: false, note: "-" },
+      { no: 35, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Ahmet",          surname: "HATİPOĞLU",       sicil: "1982-L-39",  left: "15.02.2007", died: "04.05.2015", burial: "-",                                                sehit: false, note: "-" },
+      { no: 36, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Hasan Hüseyin",  surname: "KARASULU",        sicil: "1982-L-12",  left: "17.04.2006", died: "07.02.2015", burial: "-",                                                sehit: false, note: "-" },
+      { no: 37, rank: "Hv.Svn.Asb.Bçvş.",           name: "Sitkı Ata",      surname: "ÜSTÜN",           sicil: "1982-L-21",  left: "31.08.1998", died: "17.07.2014", burial: "-",                                                sehit: false, note: "-" },
+      { no: 38, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Aygün",          surname: "SELÇUK",          sicil: "1982-L-8",   left: "23.03.2004", died: "12.11.2013", burial: "-",                                                sehit: false, note: "-" },
+      { no: 39, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "Hüseyin GÜROLALKILIÇGİL", surname: "-",   sicil: "1982-L-152", left: "31.05.2007", died: "16.07.2013", burial: "-",                                                sehit: false, note: "-" },
+      { no: 40, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Ismail",         surname: "TEKEL",           sicil: "1982-L-165", left: "28.01.2005", died: "21.01.2013", burial: "-",                                                sehit: false, note: "-" },
+      { no: 41, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "İlhan",          surname: "KANBOLAT",        sicil: "1982-L-136", left: "16.02.2004", died: "26.10.2012", burial: "-",                                                sehit: false, note: "-" },
+      { no: 42, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Yaşar",          surname: "DURGUT",          sicil: "1982-L-65",  left: "02.04.2003", died: "09.02.2012", burial: "-",                                                sehit: false, note: "-" },
+      { no: 43, rank: "Hv.ls.Asb.Kd.Bçvş.",        name: "Rafet",          surname: "TOPALOĞLU",       sicil: "1982-L-112", left: "20.02.2008", died: "27.12.2011", burial: "-",                                                sehit: false, note: "-" },
+      { no: 44, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "Sinan",          surname: "ALKIŞ",           sicil: "1982-L-27",  left: "16.02.2007", died: "21.06.2011", burial: "-",                                                sehit: false, note: "-" },
+      { no: 45, rank: "Hv.Rd.Asb.Kd.Bçvş.",        name: "Ahmet",          surname: "YEŞİLOVA",        sicil: "1982-L-20",  left: "31.01.2003", died: "25.07.2010", burial: "-",                                                sehit: false, note: "-" },
+      { no: 46, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Enver",          surname: "KiGO",            sicil: "1982-L-14",  left: "07.02.2006", died: "20.09.2009", burial: "-",                                                sehit: false, note: "-" },
+      { no: 47, rank: "Hv.Mly.Asb.Kd.Bçvş.",       name: "Harun",          surname: "BELİKIRIK",       sicil: "1982-L-15",  left: "16.04.2004", died: "15.06.2008", burial: "-",                                                sehit: false, note: "-" },
+      { no: 48, rank: "Hv.Uçk.Bkm.Asb.Kd.Bçvs",   name: "Temel",          surname: "UĞURLU",          sicil: "1982-L-84",  left: "08.11.2007", died: "08.11.2007", burial: "-",                                                sehit: false, note: "-" },
+      { no: 49, rank: "Hv.lkm.Asb.Kd.Bçvş.",       name: "Ahmet",          surname: "YILMAZ",          sicil: "1982-L-70",  left: "16.11.2006", died: "20.10.2006", burial: "-",                                                sehit: false, note: "-" },
+      { no: 50, rank: "Hv.Lv.Asb.Kd.Bçvş",         name: "Mehmet Cemal",   surname: "DURAN",           sicil: "1982-L-9",   left: "19.08.2002", died: "18.10.2006", burial: "-",                                                sehit: false, note: "-" },
+      { no: 51, rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Abdulkerim",     surname: "SEDEFOĞLU",       sicil: "1982-L-23",  left: "17.02.2003", died: "30.01.2006", burial: "-",                                                sehit: false, note: "-" },
+      { no: 52, rank: "Hv.Per.Asb.Kd.Çvş.",        name: "Ramazan",        surname: "AKALIN",          sicil: "1982-L-58",  left: "16.06.1994", died: "03.10.2005", burial: "-",                                                sehit: false, note: "-" },
+      { no: 53, rank: "Hv.Svn.Asb.Kd.Bçvş.",       name: "Hüseyin",        surname: "RAHAT",           sicil: "1982-L-23",  left: "25.05.2002", died: "25.05.2002", burial: "-",                                                sehit: false, note: "-" },
+      { no: 54, rank: "Hv.Uçk.Bkm.Asb.Bçvs",       name: "Özer",           surname: "BİLİCI",          sicil: "1982-L-9",   left: "03.12.2001", died: "03.12.2001", burial: "-",                                                sehit: false, note: "-" },
+      { no: 55, rank: "Hv.P.Asb.Kd.Bçvş.",         name: "Berat",          surname: "ARIKAN",          sicil: "1982-L-39",  left: "12.08.2001", died: "12.08.2001", burial: "-",                                                sehit: false, note: "-" },
+      { no: 56, rank: "Hv.Sih.Müht.Asb.Kd.Bçvş.", name: "Ali",            surname: "KARYAĞDI",        sicil: "1982-L-65",  left: "14.05.2001", died: "04.05.2001", burial: "-",                                                sehit: false, note: "-" },
+      { no: 57, rank: "Hv.Ulş.Asb.Kd.Çvş.",        name: "Hayati",         surname: "ÇAVDAR",          sicil: "1982-L-6",   left: "16.08.1988", died: "08.05.2000", burial: "-",                                                sehit: false, note: "-" },
+      { no: 58, rank: "Hv.SIh.Müht.Asb.Bçvş.",     name: "Hüseyin",        surname: "KUTLU",           sicil: "1982-L-16",  left: "22.09.1999", died: "22.09.1999", burial: "Eskişehir",                                        sehit: true,  note: "ŞEHİT" },
+      { no: 59, rank: "Hv.Is.Asb.Bçvş.",            name: "Ahmet",          surname: "KULBAKAN",        sicil: "1982-L-27",  left: "07.05.1998", died: "06.05.1998", burial: "-",                                                sehit: false, note: "-" },
+      { no: 60, rank: "Hv.ls.Asb.Bçvş.",            name: "Feyzullah",      surname: "GÜNAY",           sicil: "1982-L-6",   left: "12.09.1997", died: "08.09.1997", burial: "-",                                                sehit: false, note: "-" },
+      { no: 61, rank: "Hv.lkm.Asb.Bçvş.",           name: "Atila",          surname: "BAŞ",             sicil: "1982-L-46",  left: "25.04.1997", died: "23.04.1997", burial: "-",                                                sehit: false, note: "-" },
+      { no: 62, rank: "Hv.Is.Asb.Bçvş.",            name: "Kadir",          surname: "ÇAM",             sicil: "1982-L-32",  left: "04.08.1995", died: "27.03.1997", burial: "-",                                                sehit: false, note: "-" },
+      { no: 63, rank: "Hv.Mu.Asb.Bçvş",             name: "Osman",          surname: "BEKLER",          sicil: "1982-L-103", left: "19.12.1995", died: "19.12.1995", burial: "-",                                                sehit: false, note: "-" },
+      { no: 64, rank: "Hv.Uçk.Bkm.Asb.Bçvş.",      name: "Rahmi",          surname: "BİNAY",           sicil: "1982-L-78",  left: "15.11.1995", died: "15.11.1995", burial: "-",                                                sehit: false, note: "-" },
+      { no: 65, rank: "Hv.Uçk..Bkm.Asb.Üçvş.",     name: "Yalçın",         surname: "BENEK",           sicil: "1982-L-114", left: "16.05.1990", died: "06.12.1994", burial: "-",                                                sehit: false, note: "-" },
+      { no: 66, rank: "Hv.ls.Asb.Bçvş.",            name: "Levent",         surname: "ÜZMEZ",           sicil: "1982-L-42",  left: "21.10.1994", died: "21.10.1994", burial: "-",                                                sehit: false, note: "-" },
+      { no: 67, rank: "Hv Per.Asb Üçvş",            name: "Remzi",          surname: "SÖNMEZ",          sicil: "1982-L-25",  left: "09.03.1989", died: "09.03.1989", burial: "-",                                                sehit: false, note: "-" },
+      { no: 68, rank: "Hv Ulş Asb Uçvş",            name: "Köksal",         surname: "OĞUL",            sicil: "1982-L-71",  left: "25.11.1988", died: "25.11.1988", burial: "-",                                                sehit: false, note: "-" },
+      { no: 69, rank: "HvUçk.Bkm.Asb.Kd.Çvş",      name: "Tufan",          surname: "OĜUZ",            sicil: "1982-L-9",   left: "04.07.1988", died: "04.07.1988", burial: "-",                                                sehit: false, note: "-" },
+      { no: 70, rank: "Hv Sih.Muht.Asb. Kd.Çvş.",  name: "Hakkı",          surname: "ERSONMEZ",        sicil: "1982-L-11",  left: "13.07.1986", died: "13.07.1986", burial: "-",                                                sehit: false, note: "-" },
+      { no: 71, rank: "Hv. Ikm.Asb Çvş.",           name: "Ramazan Doğan",  surname: "DOST",            sicil: "1982-L-48",  left: "19.03.1986", died: "19.03.1986", burial: "-",                                                sehit: false, note: "-" },
+      { no: 72, rank: "Hv.SIh. Müht.Asb.Kd.Çvş",   name: "Celal",          surname: "AKBAŞ",           sicil: "1982-L-7",   left: "28.10.1985", died: "28.10.1985", burial: "-",                                                sehit: false, note: "-" },
+      { no: 73, rank: "Hv.Per.Asb.ÇvŞ.",            name: "Osman",          surname: "DÜZENLİ",         sicil: "1982-L-39",  left: "06.08.1984", died: "05.08.1984", burial: "-",                                                sehit: false, note: "-" },
+      { no: 74, rank: "Hv.Is.Asb.Çvş.",             name: "Ergin",          surname: "TUNCER",          sicil: "1982-L-58",  left: "19.05.1983", died: "19.05.1983", burial: "-",                                                sehit: false, note: "-" },
+      { no: 75, rank: "Dz.Elk.Asb.Kd.Bçvş.",       name: "Çetin",          surname: "KOÇ",             sicil: "1982/22216", left: "-",           died: "14.09.2023", burial: "Torbalı Yeni Mezarlığı Ada 9 TORBALI-İZMİR",       sehit: false, note: "-" },
+      { no: 76, rank: "Hv.P.Astsb.Kd.Bçvş.",       name: "Mahmut",         surname: "TURAN",           sicil: "-",          left: "-",           died: "26.07.2023", burial: "Kuşçular Mezarlığı Ada2 URLA-İZMİR",               sehit: false, note: "-" },
+      { no: 77, rank: "Hv.İkm.Asb.Kd.Bçvş.",       name: "Eren Ergin",     surname: "ÖZDEMİR",         sicil: "-",          left: "-",           died: "01.02.2026", burial: "Polatlı ANKARA",                                   sehit: false, note: "-" },
+      { no: 78, rank: "Hv.Ulş.Asb.Kd.Bçvş.",       name: "Hakan",          surname: "GÖKDEMİR",        sicil: "-",          left: "-",           died: "09.08.2026", burial: "Cimşit Mezarlığı ANKARA",                          sehit: false, note: "-" },
+      { no: 79, rank: "Hv.Mu.Asb.Kd.Bçvş.",        name: "Metin",          surname: "FİDAN",           sicil: "-",          left: "-",           died: "15.02.2025", burial: "Salihli Asri Mezarlığı MANİSA",                    sehit: false, note: "-" },
+      { no: 80, rank: "Hv.Rd.Asb.Kd.Bçvş.",        name: "Cazım",          surname: "HARPUTLU",        sicil: "-",          left: "-",           died: "13.09.2025", burial: "-",                                                sehit: false, note: "-" },
+      { no: 81, rank: "Hv.İsth.Asb.Üçvş.",         name: "Mehmet",         surname: "ÇANKAYA",         sicil: "-",          left: "-",           died: "-",           burial: "-",                                                sehit: false, note: "-" }
+    ];
+
+    // ==========================================
+    // TABLO RENDER & FİLTRELEME
+    // ==========================================
+    let currentData = [...departed];
+    let sortDir = 'desc';
+
+    function parseTrDate(dateStr) {
+      if (!dateStr || dateStr === '-') return null;
+      const parts = dateStr.split('.');
+      if (parts.length !== 3) return null;
+      return new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById('depTableBody');
+      const noResult = document.getElementById('depNoResult');
+      const countInfo = document.getElementById('depCountInfo');
+
+      if (data.length === 0) {
+        tbody.innerHTML = '';
+        noResult.style.display = 'flex';
+        countInfo.textContent = '0 kayıt gösteriliyor';
+        return;
+      }
+
+      noResult.style.display = 'none';
+      countInfo.textContent = data.length + ' kayıt gösteriliyor';
+
+      tbody.innerHTML = data.map((r, i) => {
+        const rowClass = r.sehit ? 'dep-row dep-row-sehit' : (i % 2 === 0 ? 'dep-row dep-row-even' : 'dep-row dep-row-odd');
+        const noteCell = r.sehit
+          ? '<td class="dep-td dep-td-sehit"><span class="dep-sehit-badge"><i class="fas fa-star-and-crescent"></i> ŞEHİT</span></td>'
+          : `<td class="dep-td">${r.note}</td>`;
+        return `<tr class="${rowClass}">
+          <td class="dep-td dep-td-no">${r.no}</td>
+          <td class="dep-td dep-td-rank">${r.rank}</td>
+          <td class="dep-td">${r.name}</td>
+          <td class="dep-td dep-td-surname">${r.surname}</td>
+          <td class="dep-td dep-td-sicil">${r.sicil}</td>
+          <td class="dep-td">${r.left}</td>
+          <td class="dep-td">${r.died}</td>
+          <td class="dep-td dep-td-burial">${r.burial}</td>
+          ${noteCell}
+        </tr>`;
+      }).join('');
+    }
+
+    function populateYearFilter() {
+      const years = new Set();
+      departed.forEach(r => {
+        const d = parseTrDate(r.died);
+        if (d) years.add(d.getFullYear());
+      });
+      const sorted = [...years].sort((a, b) => b - a);
+      const sel = document.getElementById('depYearFilter');
+      sorted.forEach(y => {
+        const opt = document.createElement('option');
+        opt.value = y;
+        opt.textContent = y;
+        sel.appendChild(opt);
+      });
+    }
+
+    function filterAndSort() {
+      const q = document.getElementById('depSearch').value.trim().toLowerCase();
+      const year = document.getElementById('depYearFilter').value;
+
+      let data = departed.filter(r => {
+        const matchQ = !q ||
+          r.name.toLowerCase().includes(q) ||
+          r.surname.toLowerCase().includes(q) ||
+          r.sicil.toLowerCase().includes(q) ||
+          (r.name + ' ' + r.surname).toLowerCase().includes(q);
+        const diedDate = parseTrDate(r.died);
+        const matchYear = !year || (diedDate && diedDate.getFullYear() === parseInt(year));
+        return matchQ && matchYear;
+      });
+
+      data.sort((a, b) => {
+        const da = parseTrDate(a.died);
+        const db = parseTrDate(b.died);
+        if (!da && !db) return 0;
+        if (!da) return 1;
+        if (!db) return -1;
+        return sortDir === 'desc' ? db - da : da - db;
+      });
+
+      currentData = data;
+      renderTable(data);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      populateYearFilter();
+      renderTable(departed);
+
+      const searchInput = document.getElementById('depSearch');
+      const clearBtn = document.getElementById('depSearchClear');
+
+      searchInput.addEventListener('input', () => {
+        clearBtn.style.display = searchInput.value ? 'flex' : 'none';
+        filterAndSort();
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.style.display = 'none';
+        filterAndSort();
+      });
+
+      document.getElementById('depYearFilter').addEventListener('change', filterAndSort);
+
+      document.getElementById('depSortBtn').addEventListener('click', () => {
+        sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+        const btn = document.getElementById('depSortBtn');
+        btn.dataset.dir = sortDir;
+        btn.querySelector('i').className = sortDir === 'desc' ? 'fas fa-sort-amount-down' : 'fas fa-sort-amount-up';
+        filterAndSort();
+      });
+    });
+  </script>
 
 </body>
 

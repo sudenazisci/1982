@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initParallax();
   initTextReveal();
   initImageLightbox();
+  initActivitySliders();
 });
 
 // ==========================================
@@ -516,4 +517,40 @@ function initImageLightbox() {
     }
   });
 }
+
+// ==========================================
+// ACTIVITY GALLERY SLIDERS
+// ==========================================
+function initActivitySliders() {
+  const sliderWraps = document.querySelectorAll('.act-slider-wrap');
+  sliderWraps.forEach(wrap => {
+    const track = wrap.querySelector('.act-slider-track');
+    const prevBtn = wrap.querySelector('.act-slider-arrow.prev');
+    const nextBtn = wrap.querySelector('.act-slider-arrow.next');
+    if (!track || !prevBtn || !nextBtn) return;
+
+    const items = track.querySelectorAll('.act-gallery-item');
+    if (items.length <= 2) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      return;
+    }
+
+    const getScrollStep = () => {
+      const firstItem = items[0];
+      return firstItem ? (firstItem.offsetWidth + 20) : 320;
+    };
+
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+  });
+}
+
 
